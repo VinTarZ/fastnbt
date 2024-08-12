@@ -2,7 +2,7 @@ mod array_serializer;
 mod de;
 mod ser;
 
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 use serde::{serde_if_integer128, Deserialize, Serialize};
 
@@ -44,7 +44,7 @@ pub enum Value {
     IntArray(IntArray),
     LongArray(LongArray),
     List(Vec<Value>),
-    Compound(HashMap<String, Value>),
+    Compound(BTreeMap<String, Value>),
 }
 
 #[cfg(feature = "arbitrary1")]
